@@ -1,23 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {margin: 0;font-family: 'Segoe UI', sans-serif;}
+
+    #container {
+      display: flex;
+      height: 100vh;
+    }
+
+    #navigation {
+      width: 220px;
+      background-color: #fff;
+      border-right: 1px solid #222;
+      padding: 0px 20px;
+    }
+
+    #navigation h1 {
+      font-size: 28px;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    #navigation button {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 6px;
+      background-color: transparent;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    #navigation button i {
+      margin-right: 10px;
+      font-size: 16px;
+    }
+
+    #navigation button:hover,
+    #navigation button.active {
+      background-color: #111;
+      color: #fff;
+    }
+
+    #content {
+      flex-grow: 1;
+      padding: 30px;
+      background-color: #fff;
+      position: relative;
+    }
+
+    .search-box {
+      margin-bottom: 20px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #222;
+    }
+
+    .user-card {
+      background-color: #fff;
+      border: 1px solid #222;
+      border-radius: 8px;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .user-card h3 {
+      margin: 0 0 5px;
+      font-weight: 600;
+    }
+
+    .user-card p {
+      margin: 0 0 10px;
+      color: #333;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #222;
+      color: white;
+      font-size: 11px;
+      border-radius: 4px;
+      padding: 2px 6px;
+      margin-right: 6px;
+    }
+
+    .status {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-weight: bold;
+    }
+
+    .status.aktif {
+      color: #222;
+    }
+
+    .status.suspended {
+      color: #222;
+    }
+
+    .fab {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background-color: #ddd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .fab:hover {
+      background-color: #ccc;
+    }
+  </style>
 </head>
 <body>
-   <section id="container" style="display: flex; height: 100vh"> 
-        <section id="navigation" style="background-color: pink; width: 15%">
-        <h1 style="text-align: center">Connect</h1>
-            <div style="display: flex; flex-direction: column; gap: 8px">
-            <button>User
-            <button>Hak Akses
-            <button>Log Out</button>
-            </div>
-        </section>
-        <section id="content" style="background-color:aqua; width: 85%">
-            <input type="search" placeholder="Cari User" >
-        </section>
-   </section>
+  <section id="container">
+    <nav id="navigation">
+      <h1>Connect</h1>
+      <button class="active"><i class="fas fa-user"></i> User</button>
+      <button><i class="fas fa-user-cog"></i> Hak Akses</button>
+      <button><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </nav>
+    <main id="content">
+      <div class="search-box">
+        <input type="search" placeholder="Cari user">
+      </div>
+
+      <div class="user-card">
+        <span class="status aktif">Aktif</span>
+        <h3>Rahmat Saudi Al Fathir As</h3>
+        <p>rahmatsaudi@universitasmulia.ac.id</p>
+        <span class="badge">Admin</span>
+        <span class="badge">Employee</span>
+      </div>
+
+      <div class="user-card">
+        <span class="status aktif">Aktif</span>
+        <h3>Lintang</h3>
+        <p>lintang@universitasmulia.ac.id</p>
+        <span class="badge">Employee</span>
+      </div>
+
+      <div class="user-card">
+        <span class="status aktif">Aktif</span>
+        <h3>Shafira</h3>
+        <p>shafira@universitasmulia.ac.id</p>
+        <span class="badge">Employee</span>
+      </div>
+
+      <div class="user-card">
+        <span class="status suspended">Suspended</span>
+        <h3>Lebah Ganteng</h3>
+        <p>lebahganteng@universitasmulia.ac.id</p>
+        <span class="badge">Employee</span>
+      </div>
+
+      <button class="fab"><i class="fas fa-plus"></i></button>
+    </main>
+  </section>
 </body>
 </html>
